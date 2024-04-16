@@ -1,5 +1,47 @@
 
 const tl1 = gsap.timeline({paused:true});
+const shopCycle1 = document.querySelector(".shopCycle1")
+const shopCycle2 = document.querySelector(".shopCycle2")
+const price = document.querySelector(".price")
+const addToCart = document.querySelector(".addToCart")
+const circle1 = document.querySelector(".circle1")
+
+let total = 0;
+let count = 0;
+console.log(parseFloat(price.textContent.slice(1)))
+
+function calculateTotal(total){
+  total += parseFloat(price.textContent.slice(1))
+  return total
+}
+
+let itemArray = []
+function modifyArray(){
+  if(parseFloat(price.textContent.slice(1)) == 699.99){
+    itemArray.push("racer")
+  }
+  if(parseFloat(price.textContent.slice(1)) == 999.99){
+    itemArray.push("drifter")
+  }
+  return itemArray
+}
+
+function countItems(){
+  if(itemArray.length>0){
+    circle1.classList.remove("hide")
+    circle1.textContent = itemArray.length
+  }else{
+    circle1.classList.add("hide")
+  }
+}
+
+addToCart.addEventListener("click",()=>{
+   total = calculateTotal(total)
+   console.log(total)
+   modifyArray();
+   countItems()
+})
+
 // const tl2 = gsap.timeline({paused:true});
 // tl1.to(".hero",{
 //   xPercent:-50,
@@ -49,6 +91,9 @@ leftButton.addEventListener("click", ()=>{
     stick.style.backgroundColor = "white"
     console.log("hi")
   })
+  shopCycle1.classList.add("hide")
+  shopCycle2.classList.remove("hide")
+  price.textContent = "$999.99"
 })
 
 rightButton.addEventListener("click", ()=>{
@@ -60,6 +105,9 @@ rightButton.addEventListener("click", ()=>{
     stick.style.backgroundColor = "black"
     console.log("hi")
   })
+  shopCycle1.classList.remove("hide")
+  shopCycle2.classList.add("hide")
+  price.textContent = "$699.99"
 })
 
 gsap.to(".rock1",{
@@ -149,6 +197,28 @@ gsap.from(".page3Head1",{
 gsap.from(".racer",{
   y:-100,
   opacity:0,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    // markers:true,
+    scrub:1,
+    start:"45% top",
+    // end:"80%"
+  }
+})
+gsap.from(".shop",{
+  y:280,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    // markers:true,
+    scrub:1,
+    start:"45% top",
+    // end:"80%"
+  }
+})
+gsap.from(".shopCycle",{
+  x:-280,
   scrollTrigger:{
     trigger:".page1",
     scroller:"body",
