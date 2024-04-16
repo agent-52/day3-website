@@ -14,11 +14,20 @@ html,body{
 }
 body{
   position: relative;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  height: 100vh;
   z-index: 1; 
 }
 
 body::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
+}
+
+.page3{
+  width: 100vw;
+  height: 100vh;
+  background-color: blue;
 }
 
 .greyBg{
@@ -28,20 +37,29 @@ body::-webkit-scrollbar {
 }
 .greenBg{
   background: rgb(132,186,117);
-  background: linear-gradient(180deg, rgba(132,186,117,1) 24%, rgba(100,232,64,1) 52%, rgba(54,140,34,1) 85%);
+  background: linear-gradient(180deg, rgba(132,186,117,1) 24%, rgba(54, 113, 44, 0.779) 52%, rgba(33, 73, 24, 0.844) 85%);
 }
 .hide{
   display: none;
   opacity: 0;
 }
+.white{
+  color: white;
+}
+.whiteBg{
+  background-color: white;
+}
 
 header{
-  position: fixed;
+  /* position: fixed; */
+  background-color: transparent;
   z-index: 10;
+  /* border: 2px solid red; */
   margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 100%;
+  width: 100vw;
+  height: min-content;
   margin-left: 1rem;
   margin-right: 2rem;
 }
@@ -84,18 +102,22 @@ header img{
   background-color: black;
   height: 5px;
 }
-.hero{
+/* .hero{
   margin-top: 3rem;
-}
+} */
 
 .mountain{ 
-  width: 100vw;
+  min-width: 100vw; 
   height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem
+  gap: 1rem;
+  overflow: hidden;
   /* justify-content: center; */
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 24%, rgba(159,159,159,1) 100%);
+  grid-area: mountain;
 }
 .mh{
   margin-top: 3rem;
@@ -103,7 +125,7 @@ header img{
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
-  color: rgba(0, 0, 0, 0.286);
+  color: rgba(0, 0, 0, 0.236);
   
 }
 .ride{
@@ -113,11 +135,6 @@ header img{
 .heading{
   font-size: 12rem;
   font-weight: bolder;
-}
-
-.jungle{
-  width: 100vw;
-  height: 100vh;
 }
 
 .cycle1,.rock1,.rock2{
@@ -133,13 +150,76 @@ header img{
 .rock1{
   /* border: 2px solid red; */
   transform: scale(0.7);
-  bottom: -13%;
+  bottom: -17.5%;
   left: -16%;
   z-index: 6;
 }
 .rock2{
   transform: scale(0.5) rotateY(180deg);
-  bottom: -13%;
-  right: -21%;
+  bottom: -15%;
+  right: -22%;
+  z-index: 6;
+}
+.leftArrow{
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-left: 3rem;
+  transition: transform 0.2s ease-in-out; 
+  max-width: fit-content;
+}
+.leftArrow:hover{
+  transform: scale(1.6);
+}
+section{
+  display: grid;
+  grid-template-columns: 100vw 100vw;
+  grid-template-areas: "jungle mountain";
+  /* border: 2px solid green */
+}
+
+/*jungle*/
+.jungle{
+  min-width: 100vw;
+  height: 100vh;
+  background: rgb(26,81,46);
+  background: linear-gradient(0deg, rgba(26,81,46,1) 0%, rgba(99,169,31,1) 52%, rgba(122,152,94,1) 87%);
+  grid-area: jungle;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.rightArrow{
+  margin-left: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.2s ease-in-out; 
+  max-width: fit-content;
+}
+.rightArrow:hover{
+  transform: scale(1.6);
+  /* font-size: 3rem; */
+}
+.cycle2{
+  position: absolute;
+  z-index: 5;
+  left: 4.2%;
+  transform: scale(0.59);
+  /* border: 2px solid red; */
+  top: -21%
+}
+.bush1{
+  position: absolute;
+  transform:scale(0.7) rotate(-35deg);
+  right: -20%;
+  bottom: -19%;
+  z-index: 6;
+}
+.bush2{
+  position: absolute;
+  transform:scale(0.3);
+  bottom:-25%;
+  left:-40%;
   z-index: 6;
 }
