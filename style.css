@@ -24,12 +24,6 @@ body::-webkit-scrollbar {
   display: none;  /* Safari and Chrome */
 }
 
-.page3{
-  width: 100vw;
-  height: 100vh;
-  background-color: blue;
-}
-
 .greyBg{
   /* background-image: linear-gradient(to bottom, #ffffff, #f1f1f1, #e2e2e2, #d4d4d4, #c6c6c6); */
   background: rgb(255,255,255);
@@ -222,4 +216,128 @@ section{
   bottom:-25%;
   left:-40%;
   z-index: 6;
+}
+
+/*page3*/
+.page3{
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap:8.5rem;
+}
+.page3h{
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+.page3Head1{
+  font-size: 2.4rem;
+  font-weight: bolder;
+  text-align: center;
+}
+.shop{
+  display:grid;
+  grid-template-columns: 1.3fr 1fr;
+  background: rgba(236, 236, 236, 0.637);
+  gap: 2.5rem;
+}
+.page3r{
+  display:flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  margin-top: 1rem;
+  margin-bottom: 2.4rem;
+}
+.sizeBox{
+  display: flex;
+  flex-direction: column;
+  gap:0.65rem
+}
+.size{
+  padding: 0.4rem 0.8rem;
+  background-color: transparent;
+  font-weight: bold;
+}
+.buttonBox{
+  display:flex;
+  gap:0.5rem
+}
+.addToCart{
+  background-color: yellow;
+  padding: 0.6rem 1.3rem;
+  border: none;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+.reserve{
+  background-color: white;
+  padding: 0.6rem 1.3rem;
+  border: none;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+.shopCycle{
+  position: relative;
+}
+.shopCycle>img{
+  top:-160%;
+  left:-30%;
+  position: absolute;
+  transform: scale(0.45);
+}
+.price{
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: yellow;
+  width: min-content;
+  padding-block: 0.1rem;
+  padding-inline: 0.25rem;
+  text-align: center;
+}
+.priceBox{
+  display:flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.galleryBox{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.galleryName{
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+.gallery{
+  display:flex;
+  gap: 0.5rem;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  width: 100vw;
+  margin-inline: 1rem;
+}
+.gallery img{
+  width: 33%;
+  object-fit: cover;
+  height: 350px;
+}
+.technicalBox{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.5rem;
+}
+.techBox{
+  display:flex;
+  gap: 0.5rem;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.techInfoBox{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }

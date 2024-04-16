@@ -62,3 +62,103 @@ rightButton.addEventListener("click", ()=>{
   })
 })
 
+gsap.to(".rock1",{
+  yPercent:100,
+  xPercent:-35,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    scrub:1,
+    start:"5% top",
+    end:"bottom -35% "
+    // markers:true
+  }
+})
+gsap.to(".bush1",{
+  yPercent:100,
+  xPercent:35,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    scrub:1,
+    start:"5% top",
+    end:"bottom -10% "
+    // markers:true
+  }
+})
+gsap.to(".bush2",{
+  yPercent:100,
+  xPercent:-35,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    scrub:1,
+    start:"5% top",
+    end:"bottom -15% "
+    // markers:true
+  }
+})
+gsap.to(".rock2",{
+  yPercent:100,
+  xPercent:35,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    scrub:1,
+    start:"5% top",
+    // markers:true,
+    end:"bottom -35% "
+  }
+})
+gsap.to(".cycle1,.cycle2",{
+  yPercent:-100,
+  scale:0.3,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    scrub:1,
+    start:"5% top",
+    // markers:true,
+    end:"bottom -100% "
+  }
+})
+gsap.to(".heading,.ride",{
+  yPercent:-100,
+  scale:0.3,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    scrub:1,
+    start:"5% top",
+    // markers:true,
+    end:"bottom -110% "
+  }
+})
+
+gsap.from(".page3Head1",{
+  y:280,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    // markers:true,
+    scrub:1,
+    start:"45% top",
+    // end:"80%"
+  }
+})
+gsap.from(".racer",{
+  y:-100,
+  opacity:0,
+  scrollTrigger:{
+    trigger:".page1",
+    scroller:"body",
+    // markers:true,
+    scrub:1,
+    start:"45% top",
+    // end:"80%"
+  }
+})
+
+
+
+
