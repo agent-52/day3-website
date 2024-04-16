@@ -5,6 +5,8 @@ const shopCycle2 = document.querySelector(".shopCycle2")
 const price = document.querySelector(".price")
 const addToCart = document.querySelector(".addToCart")
 const circle1 = document.querySelector(".circle1")
+const cycleName = document.querySelector(".page3Head1")
+const cycleType = document.querySelector(".racer")
 
 let total = 0;
 let count = 0;
@@ -64,14 +66,14 @@ gsap.set(".hero", {
 
 tl1.to(".hero",{
   xPercent:0,
-  duration:1.75,
-  ease: "power2.out",
+  duration:1.5,
+  // ease: "power2.out",
 })
 tl1.to("body",{
   background: "rgb(26,81,46)",
   background: "linear-gradient(0deg, rgba(26,81,46,1) 0%, rgba(99,169,31,1) 52%, rgba(122,152,94,1) 87%)",
-  duration:1.75,
-},"-=1.75")
+  duration:1.5,
+},"-=1.5")
 
 // tl2.to(".hero",{
 //   xPercent:-50,
@@ -94,6 +96,8 @@ leftButton.addEventListener("click", ()=>{
   shopCycle1.classList.add("hide")
   shopCycle2.classList.remove("hide")
   price.textContent = "$999.99"
+  cycleName.textContent = "MARSHCUTTER JS KR96"
+  cycleType.textContent = "DRIFTER"
 })
 
 rightButton.addEventListener("click", ()=>{
@@ -108,6 +112,8 @@ rightButton.addEventListener("click", ()=>{
   shopCycle1.classList.remove("hide")
   shopCycle2.classList.add("hide")
   price.textContent = "$699.99"
+  cycleName.textContent = "ROCKRIDER RR ST100"
+  cycleType.textContent = "RACER"
 })
 
 gsap.to(".rock1",{
